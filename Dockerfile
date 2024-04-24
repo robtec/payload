@@ -4,13 +4,11 @@ FROM base as builder
 
 WORKDIR /home/node
 
-COPY package*.json ./
+RUN npm install -g pnpm
 
-COPY . .
+COPY package*.json pnpm-*.yaml ./
 
-RUN npm install
-
-RUN npm run build
+RUN pnpm install --frozen-lockfile
 
 FROM base as runtime
 
