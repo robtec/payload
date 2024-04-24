@@ -8,6 +8,8 @@ COPY package*.json pnpm-*.yaml ./
 
 RUN pnpm install --frozen-lockfile
 
+COPY . .
+
 RUN npm run build
 
 ENV NODE_ENV=production
