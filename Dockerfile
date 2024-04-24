@@ -8,6 +8,8 @@ COPY package*.json pnpm-*.yaml ./
 
 RUN pnpm install --frozen-lockfile
 
+RUN npm install
+
 COPY . .
 
 RUN npm run build
