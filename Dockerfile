@@ -8,9 +8,9 @@ COPY package*.json ./
 
 COPY . .
 
-RUN yarn install
+RUN npm install
 
-RUN yarn build
+RUN npm run build
 
 FROM base as runtime
 
