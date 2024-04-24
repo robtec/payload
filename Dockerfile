@@ -8,7 +8,7 @@ COPY package*.json pnpm-*.yaml ./
 
 RUN pnpm install --frozen-lockfile
 
-RUN npm install
+RUN yarn install
 
 COPY . .
 
